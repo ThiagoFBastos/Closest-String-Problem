@@ -29,7 +29,7 @@ e Simulated Annealing que possui 8 versões sendo 4 delas seriais e 4 paralelas.
 	Pasta: Está na pasta ga
 
 <h3 > Instancias </h3>
-	Chimani: Está na pasta instancias/csp_rnd_tar
-	McClure: Está na pasta instancias/mcclure_tar
-	Hufsky: Está na pasta instancias/hufsky_tar
+	Chimani: Está na pasta instancias/csp_rnd_tar <br>
+	McClure: Está na pasta instancias/mcclure_tar <br>
+	Hufsky: Está na pasta instancias/hufsky_tar <br>
 	
