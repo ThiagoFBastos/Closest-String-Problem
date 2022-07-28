@@ -12,7 +12,7 @@ Seja $S$ uma sequência de cadeias {$S_1$, $S_2$, $S_3$, ... , $S_n$} com $|S_i|
 * programa make
 
 ## Uso
-1. Abra a pasta alvo e dê um ./make
+1. Abra a pasta alvo e dê um "make"
 2. execute ./[programa] [arquivo com as instâncias]
 	
 ## Simulated Annealing (/sa/sa-[versão])
