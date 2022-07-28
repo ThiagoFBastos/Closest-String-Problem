@@ -1,35 +1,64 @@
-<h1> Closest String Problem </h1>
+# Closest String Problem
 
-<p>
-	Seja S uma sequência de cadeias {S(1), S(2), S(3), . . . , S(n)} com |S(i)| = m que possuem
-	caracteres de um alfabeto Σ. O problema da string mais próxima consiste em		
-	encontrar uma cadeia T também de comprimento m, em que a maior distância
-	de Hamming entre T e todas as cadeias da entrada S é mínima, ou seja, T =
-	argmin(T) {max1≤i≤n{d(S(i), T)}}
-</p>
+Seja $S$ uma sequência de cadeias {$S_1$, $S_2$, $S_3$, ... , $S_n$} com $|S_i|$ = $m$ que possuem caracteres de um alfabeto $\Sigma$. O problema da string mais próxima consiste em encontrar uma cadeia T também de comprimento m, em que a maior distância de Hamming entre $T$ e todas as cadeias da entrada $S$ é mínima, ou seja, $T$ = $argmin_T$ ${max_{1 \le i \le n}{d(S_i, T)}}$
 
-<p>
-	São apresentados três algoritmos heurísticos implementados em C++: Genetic Algorithm que possui apenas uma versão, ILS que possui quatro versões
-e Simulated Annealing que possui 8 versões sendo 4 delas seriais e 4 paralelas.
+## Instâncias
+* Chimani (/instancias/csp_rnd_tar)
+* McClure (/instancias/mcclure_tar)
+* Hufsky (/instancias/hufsky_tar)
 
-</p>
+## Pré-Requisitos
+* g++ com suporte ao c++17
+* programa make
 
-<h3> Simulated Annealing </h3>
-	Pasta: Está na pasta sa e cada versão k na pasta sa/sa-k
+## Uso
+1. Abra a pasta alvo e dê um ./make
+2. execute ./[programa] [arquivo com as instâncias]
 	
-<h3> Simulated Annealing Paralelo </h3>
-	Pasta: Está na pasta sa e cada versão k na pasta sa/sa-k/sap-k
-	Pré-Requisitos: POSIX
+## Simulated Annealing (/sa/sa-[versão])
+![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/SA.png)
+### Parâmetros
+* $\epsilon$ = $10^{-3}$
+* $\rho$ = $0.99$
+* $T_0$ = 500
 	
-<h3> ILS </h3>
-	Pasta: Está na pasta ils e cada versão k na pasta ils/ils-k
-	Pré-Requisitos: SSE, SSE2, SSE3, SSE4.1, SSSE4.2 e POSIX
+## Simulated Annealing Paralelo (/sa/sa-[versão]-sap-[versão])
+![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/sap.png)
 
-<h3> GA </h3>
-	Pasta: Está na pasta ga
+### Pré-Requisitos
+* POSIX
+	
+## ILS (/ils/ils-[versão])
+![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/ils.png)
 
-<h3 > Instancias </h3>
-	Chimani: Está na pasta instancias/csp_rnd_tar <br>
-	McClure: Está na pasta instancias/mcclure_tar <br>
-	Hufsky: Está na pasta instancias/hufsky_tar <br>
+### Parâmetros
+* MAX_ITERACOES = 100
+* MAX_VEZES = 10
+
+### Busca local
+![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/ils-sa.png)
+
+#### Parâmetros
+* $\rho$ = 0.99
+* $\epsilon$ = $10^{-2}$
+* $\beta$ = $0.3$
+
+### Temperatura Inicial
+![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/T0.png)
+
+#### Parâmetros
+* $\alpha$ = 1.1
+* $\epsilon$ = $10^{-2}$
+* $\zeta$ = 0.95
+
+### Pré-Requisitos
+* SSE
+* SSE2
+* SSE3
+* SSE4.1
+* SSSE4.2
+* POSIX
+
+## GA (/ga)
+![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/g.png)
 	
