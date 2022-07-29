@@ -197,6 +197,96 @@ $NUM_{-}THREADS$ e funciona de maneira similar ao serial, contudo em um determin
 
 ![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/threads.png)
 
+### Experimentos
+
+Os testes foram realizados em um computador rodando o Ubuntu 18.04.3 LTS,
+com um processador Intel Core i7-3770 com CPU 3.40GHz e memória de 8Gb, a
+linguagem de programação utilizada foi a C++ versão 17, o compilador foi o g++
+7.4.0 e as flags de compilação usadas foram: -O3, -funroll-loops, -march=native,
+-mtune=native, -lpthread e $NUM_{-}THREADS$ = 8.
+
+Cada instância foi executada três vezes para se obter a média aritmética dos
+resultados e dos tempos.
+
+#### Instâncias Mcclure
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-sap-mcclure.png)
+
+A tabela 4.10 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $sap_1$ que contém o valor encontrado pelo SAP
+usando o algoritmo de solução inicial 1, a coluna $sap_2$ que contém o valor encontrado
+pelo SAP usando o algoritmo de solução inicial 2, a coluna sap3 que contém o valor
+encontrado pelo SAP usando o algoritmo de solução inicial 3, a coluna $sap_4$ que
+contém o valor encontrado pelo SAP usando o algoritmo de solução inicial 4, a coluna
+lb com o lower bound da solução ótima, a coluna ub com o upper bound da solução
+ótima, a coluna ER com o erro relativo entre o lower bound e a melhor resposta
+entre as versões do SAP e a coluna σ com o desvio padrão entre as respostas das
+versões do SAP.
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-sap-time-mcclure.png)
+
+A tabela 4.11 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $sap_1$ que contém o tempo em segundos da execução
+do SAP usando o algoritmo de solução inicial 1 sobre a instância, a coluna $sap_2$ que
+contém o tempo em segundos da execução do SAP usando o algoritmo de solução
+inicial 2 sobre a instância, a coluna $sap_3$ que contém o tempo em segundos da
+execução do SAP usando o algoritmo de solução inicial 3 sobre a instância e a coluna
+$sap_4$ que contém o tempo em segundos da execução do SAP usando o algoritmo de
+solução inicial 4 sobre a instância.
+
+#### Instâncias Hufsky
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-sap-hufsky.png)
+
+A tabela 4.12 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $sap_1$ que contém o valor encontrado pelo SAP
+usando o algoritmo de solução inicial 1, a coluna $sap_2$ que contém o valor encontrado
+pelo SAP usando o algoritmo de solução inicial 2, a coluna $sap_3$ que contém o valor
+encontrado pelo SAP usando o algoritmo de solução inicial 3, a coluna $sap_4$ que
+contém o valor encontrado pelo SAP usando o algoritmo de solução inicial 4, a coluna
+lb com o lower bound da solução ótima, a coluna ub com o upper bound da solução
+ótima, a coluna ER com o erro relativo entre o lower bound e a melhor resposta
+entre as versões do SAP e a coluna σ com o desvio padrão entre as respostas das
+versões do SAP. Além disso, o símbolo * indica quais das instâncias em que se foi
+possível alcançar a solução ótima.
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-sap-time-hufsky.png)
+
+A tabela 4.13 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $sap_1$ que contém o tempo em segundos da execução
+do SAP usando o algoritmo de solução inicial 1 sobre a instância, a coluna $sap_2$ que
+contém o tempo em segundos da execução do SAP usando o algoritmo de solução
+inicial 2 sobre a instância, a coluna $sap_3$ que contém o tempo em segundos da
+execução do SAP usando o algoritmo de solução inicial 3 sobre a instância e a coluna
+$sap_4$ que contém o tempo em segundos da execução do SAP usando o algoritmo de
+solução inicial 4 sobre a instância.
+
+#### Instâncias Chimani 
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-sap-chimani.png)
+
+A tabela 4.14 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $sap_1$ que contém o valor encontrado pelo SAP
+usando o algoritmo de solução inicial 1, a coluna $sap_2$ que contém o valor encontrado
+pelo SAP usando o algoritmo de solução inicial 2, a coluna $sap_3$ que contém o valor
+encontrado pelo SAP usando o algoritmo de solução inicial 3, a coluna $sap_4$ que
+contém o valor encontrado pelo SAP usando o algoritmo de solução inicial 4, a coluna
+lb com o lower bound da solução ótima, a coluna ub com o upper bound da solução
+ótima, a coluna ER com o erro relativo entre o lower bound e a melhor resposta
+entre as versões do SAP e a coluna σ com o desvio padrão entre as respostas das
+versões do SAP. Além disso, o símbolo * indica quais das instâncias em que se foi
+possível alcançar a solução ótima.
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-sap-time-chimani.png)
+
+A tabela 4.15 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $sap_1$ que contém o tempo em segundos da execução
+do SAP usando o algoritmo de solução inicial 1 sobre a instância, a coluna $sap_2$ que
+contém o tempo em segundos da execução do SAP usando o algoritmo de solução
+inicial 2 sobre a instância, a coluna $sap_3$ que contém o tempo em segundos da
+execução do SAP usando o algoritmo de solução inicial 3 sobre a instância e a coluna
+$sap_4$ que contém o tempo em segundos da execução do SAP usando o algoritmo de solução inicial 4 sobre a instância.
+
 ### Pré-Requisitos
 * POSIX
 	
