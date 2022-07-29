@@ -134,7 +134,7 @@ contém o tempo em segundos da execução do SA usando o algoritmo de solução
 inicial 2 sobre a instância, a coluna $sa_3$ que contém o tempo em segundos da execução
 do SA usando o algoritmo de solução inicial 3 sobre a instância e a coluna $sa_4$ que
 
-#### Instâncis Hufsky
+#### Instâncias Hufsky
 
 ![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-sa-hufsky.png)
 
