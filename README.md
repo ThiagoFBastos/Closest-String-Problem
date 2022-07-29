@@ -3,9 +3,31 @@
 Seja $S$ uma sequência de cadeias {$S_1$, $S_2$, $S_3$, ... , $S_n$} com $|S_i|$ = $m$ que possuem caracteres de um alfabeto $\Sigma$. O problema da string mais próxima consiste em encontrar uma cadeia T também de comprimento m, em que a maior distância de Hamming entre $T$ e todas as cadeias da entrada $S$ é mínima, ou seja, $T$ = $argmin_T$ ${max_{1 \le i \le n}{d(S_i, T)}}$
 
 ## Instâncias
-* Chimani (/instancias/csp_rnd_tar)
-* McClure (/instancias/mcclure_tar)
-* Hufsky (/instancias/hufsky_tar)
+
+### Mcclure
+
+As instâncias Mcclure (MCCLURE MARCELLA; VASI; FITCH WALTER, 1994)
+possuem um padrão de nome McClure-$p$-|$\Sigma$|-$n$-$m$.csp, em que $p$ é a página do jornal
+em que foi publicado o artigo, $\Sigma$ o alfabeto, $n$ o número de strings da entrada e $m$ é
+o comprimento das strings.
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-mcclure.png)
+
+Instâncias Mcclure com o limite inferior da resposta (lb) e o limite superior (ub).
+
+### Hufsky
+As instâncias Hufsky (HUFSKY et al., 2010) possuem um padrão de nome Hufsky-$n$-$m$-$i$.csp, em que $n$ é o número de strings da entrada e $m$ é o comprimento das strings.
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-hufsky.png)
+
+Instâncias Hufsky com o limite inferior da resposta (lb) e o limite superior (ub).
+
+### Chimani
+As instâncias Chimani (CHIMANI WOSTE, 2011) possuem um padrão de nome Hufsky-$n$-$m$-$i$.csp, em que $n$ é o número de strings da entrada e $m$ é o comprimento das strings.
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-chimani.png)
+
+Instâncias Chimani com o limite inferior da resposta (lb) e o limite superior (ub).
 
 ## Pré-Requisitos
 * g++ com suporte ao c++17
@@ -65,31 +87,139 @@ e então a sequência de strings $T$ que pussui $S_1$ como primeiro elemento (li
 No algoritmo 5, uma string é gerada pelo algoritmo de solução inicial (linha 1), a
 maior distância de hamming entre a candidata à solução e uma das strings da entrada é
 encontrada (linha 3), uma posição (posicao) entre [1, $m$] é selecionada aleatoriamente
-(linha 8), uma posição ($id$\text{_}$cadeia$) entre [1, $n$] é selecionada aleatoriamente, a string
-vizinho é gerada ao se substituir candidatoposicao por $S_{id_cadeia}$,posicao (linha 11), um
+(linha 8), uma posição ($id_{-}cadeia$) entre [1, $n$] é selecionada aleatoriamente, a string
+vizinho é gerada ao se substituir candidatoposicao por $S_{id_{-}cadeia}$,posicao (linha 11), um
 número real entre [0, 1] é gerado (linha 14).
+
+### Solução inicial
+Algoritmos de solução inicial 1, 2, 3 e 4
 
 ### Parâmetros
 * $\epsilon$ = $10^{-3}$
 * $\rho$ = $0.99$
 * $T_0$ = 500
 
+### Experimentos
 
-	
+Os testes foram realizados em um computador rodando o Ubuntu 18.04.3 LTS,
+com um processador Intel Core i7-3770 com CPU 3.40GHz e memória de 8Gb, a
+linguagem de programação utilizada foi a C++ versão 17, o compilador foi o g++
+7.4.0 e as flags de compilação usadas foram: -O3, -funroll-loops, -march=native,
+-mtune=native, -lpthread.
+
+Cada instância foi executada três vezes para se obter a média aritmética dos
+resultados e dos tempos.
+
+#### Instâncias Mcclure
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-sa-mcclure.png)
+
+A tabela 4.4 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $sa_1$ que contém o valor encontrado pelo SA usando
+o algoritmo de solução inicial 1, a coluna $sa_2$ que contém o valor encontrado pelo SA
+usando o algoritmo de solução inicial 2, a coluna $sa_3$ que contém o valor encontrado
+pelo SA usando o algoritmo de solução inicial 3, a coluna $sa_4$ que contém o valor
+encontrado pelo SA usando o algoritmo de solução inicial 4, a coluna lb com o lower
+bound da solução ótima, a coluna ub com o upper bound da solução ótima, a coluna
+ER com o erro relativo entre o lower bound e a melhor resposta entre as versões do
+SA e a coluna σ com o desvio padrão entre as respostas das versões do SA.
+
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-sa-time-mcclure.png)
+
+A tabela 4.5 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $sa_1$ que contém o tempo em segundos da execução
+do SA usando o algoritmo de solução inicial 1 sobre a instância, a coluna $sa_2$ que
+contém o tempo em segundos da execução do SA usando o algoritmo de solução
+inicial 2 sobre a instância, a coluna $sa_3$ que contém o tempo em segundos da execução
+do SA usando o algoritmo de solução inicial 3 sobre a instância e a coluna $sa_4$ que
+
+#### Instâncis Hufsky
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-sa-hufsky.png)
+
+A tabela 4.6 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $sa_1$ que contém o valor encontrado pelo SA usando
+o algoritmo de solução inicial 1, a coluna $sa_2$ que contém o valor encontrado pelo SA
+usando o algoritmo de solução inicial 2, a coluna $sa_3$ que contém o valor encontrado
+pelo SA usando o algoritmo de solução inicial 3, a coluna $sa_4$ que contém o valor
+encontrado pelo SA usando o algoritmo de solução inicial 4, a coluna lb com o lower
+bound da solução ótima, a coluna ub com o upper bound da solução ótima, a coluna
+ER com o erro relativo entre o lower bound e a melhor resposta entre as versões do
+SA e a coluna σ com o desvio padrão entre as respostas das versões do SA. Além
+disso, o símbolo * indica quais das instâncias em que se foi possível alcançar a solução
+ótima.
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-sa-time-hufsky.png)
+
+A tabela 4.7 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $sa_1$ que contém o tempo em segundos da execução
+do SA usando o algoritmo de solução inicial 1 sobre a instância, a coluna $sa_2$ que
+contém o tempo em segundos da execução do SA usando o algoritmo de solução
+inicial 2 sobre a instância, a coluna $sa_3$ que contém o tempo em segundos da execução
+do SA usando o algoritmo de solução inicial 3 sobre a instância e a coluna $sa_4$ que
+contém o tempo em segundos da execução do SA usando o algoritmo de solução
+inicial 4 sobre a instância.
+
+#### Instâncias Chimani
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-sa-chimani.png)
+
+A tabela 4.8 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $sa_1$ que contém o valor encontrado pelo SA usando
+o algoritmo de solução inicial 1, a coluna $sa_2$ que contém o valor encontrado pelo SA
+usando o algoritmo de solução inicial 2, a coluna $sa_3$ que contém o valor encontrado
+pelo SA usando o algoritmo de solução inicial 3, a coluna $sa_4$ que contém o valor
+encontrado pelo SA usando o algoritmo de solução inicial 4, a coluna lb com o lower
+bound da solução ótima, a coluna ub com o upper bound da solução ótima, a coluna
+ER com o erro relativo entre o lower bound e a melhor resposta entre as versões do
+SA e a coluna σ com o desvio padrão entre as respostas das versões do SA. Além
+disso, o símbolo * indica quais das instâncias em que se foi possível alcançar a solução
+ótima.
+
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-sa-time-chimani.png)
+
+A tabela 4.9 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $sa_1$ que contém o tempo em segundos da execução
+do SA usando o algoritmo de solução inicial 1 sobre a instância, a coluna $sa_2$ que
+contém o tempo em segundos da execução do SA usando o algoritmo de solução
+inicial 2 sobre a instância, a coluna $sa_3$ que contém o tempo em segundos da execução
+do SA usando o algoritmo de solução inicial 3 sobre a instância e a coluna $sa_4$ que
+contém o tempo em segundos da execução do SA usando o algoritmo de solução
+inicial 4 sobre a instância.
+
 ## Simulated Annealing Paralelo (/sa/sa-[versão]-sap-[versão])
 ![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/sap.png)
+
+Executa $NUM_{-}THREADS$ versões do algoritmo 5 cada uma delas identificada por um id inteiro único entre 1 e
+$NUM_{-}THREADS$ e funciona de maneira similar ao serial, contudo em um determinado momento cada thread envia a solução corrente para a de identificador ($id$ $mod$ $NUM_{-}THREADS$) + 1.
+
+![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/threads.png)
 
 ### Pré-Requisitos
 * POSIX
 	
 ## ILS (/ils/ils-[versão])
+
+Cada uma das soluções iniciais préviamente propostas 1, 2, 3 e 4 são utilizados
+para gerar primeira solução ocasionando em 4 versões do ILS e o Simulated Annealing
+5 é usado a fim de realizar a busca local.
+
 ![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/ils.png)
+
+### Solução inicial
+Algoritmos de solução inicial 1, 2, 3 e 4
 
 ### Parâmetros
 * MAX_ITERACOES = 100
 * MAX_VEZES = 10
 
 ### Busca local
+O Simulated Annealing em 5 foi ligeiramente modificado para ser a busca local do ILS. A diferença
+entre os dois algoritmos é que nesta versão a temperatura se torna dinâmica a fim
+de minimizar a complexidade.
+
 ![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/ils-sa.png)
 
 #### Parâmetros
@@ -98,6 +228,12 @@ número real entre [0, 1] é gerado (linha 14).
 * $\beta$ = $0.3$
 
 ### Temperatura Inicial
+Caso a temperatura seja constante, a escolha de uma que seja agradável para
+várias instâncias pode ser difícil de encontrar, além disso em um cenário específico o
+valor pode estar muito acima do ideal. Por isso, um método que forneça a temperatura
+de acordo com cada instância é sempre uma boa opção e por isso optamos em usar o
+algoritmo proposto por (SOUZA, 2006) o 9 para realizar essa tarefa.
+
 ![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/T0.png)
 
 #### Parâmetros
@@ -114,5 +250,52 @@ número real entre [0, 1] é gerado (linha 14).
 * POSIX
 
 ## GA (/ga)
+A abordagem utilizada é inspirada no Algoritmo Genético (GA) de (FESTA;
+PARDALOS, 2012) que consiste em trabalhar com uma população dividida em três
+camadas a cada geração: a elite que possui as melhores soluções, a mediana que
+possui as melhores soluções que não estão na elite e que é preenchida por strings
+obtidas pelo crossover e a baixa que contém a parcela restante composta por strings
+aleatórias.
+
 ![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/g.png)
 	
+### Parâmetros
+* $\lambda$ = $\frac{\sqrt{m}}{m}$
+* $populacao$ = $|S|$
+* $elite$ = 0.3
+* $media$ = 0.5
+* $baixa$ = 0.2
+
+### Solução Inicial
+Algorimo de solução inicial 1
+
+### Seleção
+Cada indivíduo $t$ da geração corrente recebe um número aleatório entre 0 e
+$max_{1 \le i \le n} {d(t,S_i)}$ e com isso são ordenados em ordem decrescente por esse valor.
+Após isso as melhores 2 ∗ $media$ soluções formam pares de tal forma que a 1ª pareia
+com a 2ª, a 3 ª com a 4ª e assim em diante e com isso essas duas strings realizam
+um crossover.
+
+### Crossover
+O crossover entre dois indivíduos ao contrário do que é comumente adotado,
+a divisão da string em duas partes e a intercalação, adotamos uma divisão entre
+subconjuntos pelo fato dos caracteres serem independentes entre si, ou seja, um
+caractere não afeta na contribuição de outro na distância de hamming.
+Com isso, o crossover se resume em selecionar um subconjunto de posições de
+cada string de tal forma que sejam disjuntos e a união seja {1, 2, 3, ..., $m$} e usar os
+elementos que estão nas posições selecionadas para gerar a nova solução.
+
+![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/selecao.png)
+
+A permutação {1,2,3, ..., $m$} é embaralhada aleatoriamente e atribuída à
+pos (linha 1), um valor inteiro aleatório entre [1, $m$] é atribuído à variável quantidade
+(linha 2), $u$ é inicializado como $t$ (linha 3) e quantidade posições são atribuidas à u
+provenientes de $s$.
+
+### Mutação
+A mutação utilizada foi proposta em (COLEY, 1999) e ocorre individualmente em
+cada posição da string de acordo com uma probabilidade $\lambda$ = $\frac{\sqrt{m}}{m}$ baixa e constante e caracteriza-se como uma mudança entre caracteres feita de forma aleatória.
+
+![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/muta%C3%A7%C3%A3o.png)
+
+O valor real aleatório entre [0, 1] é selecionado (linha 2), $S_i$ recebe um caractere aleatório de $\Sigma^{'}$ que é a coleção de todos os caracteres da coluna $j$ (linha 3).
