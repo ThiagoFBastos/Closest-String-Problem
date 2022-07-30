@@ -4,30 +4,25 @@ Seja $S$ uma sequência de cadeias {$S_1$, $S_2$, $S_3$, ... , $S_n$} com $|S_i|
 
 ## Instâncias
 
-### Mcclure
+[informações sobre as instâncias](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/instancias/research_csp_cssp%20%5BTheoretical%20Computer%20Science%20_%20Theoretische%20Informatik%5D.pdf)
 
-As instâncias Mcclure (MCCLURE MARCELLA; VASI; FITCH WALTER, 1994)
-possuem um padrão de nome McClure-$p$-|$\Sigma$|-$n$-$m$.csp, em que $p$ é a página do jornal
-em que foi publicado o artigo, $\Sigma$ o alfabeto, $n$ o número de strings da entrada e $m$ é
-o comprimento das strings.
+### Mcclure
 
 ![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-mcclure.png)
 
-Instâncias Mcclure com o limite inferior da resposta (lb) e o limite superior (ub).
+Instâncias Mcclure com o limite inferior (lb) e o limite superior (ub) da resposta.
 
 ### Hufsky
-As instâncias Hufsky (HUFSKY et al., 2010) possuem um padrão de nome Hufsky-$n$-$m$-$i$.csp, em que $n$ é o número de strings da entrada e $m$ é o comprimento das strings.
 
 ![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-hufsky.png)
 
-Instâncias Hufsky com o limite inferior da resposta (lb) e o limite superior (ub).
+Instâncias Hufsky com o limite inferior (lb) e o limite superior (ub) da resposta.
 
 ### Chimani
-As instâncias Chimani (CHIMANI WOSTE, 2011) possuem um padrão de nome Hufsky-$n$-$m$-$i$.csp, em que $n$ é o número de strings da entrada e $m$ é o comprimento das strings.
 
 ![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-chimani.png)
 
-Instâncias Chimani com o limite inferior da resposta (lb) e o limite superior (ub).
+Instâncias Chimani com o limite inferior da (lb) e o limite superior (ub) da resposta.
 
 ## Pré-Requisitos
 * g++ com suporte ao c++17
@@ -88,7 +83,7 @@ No algoritmo 5, uma string é gerada pelo algoritmo de solução inicial (linha 
 maior distância de hamming entre a candidata à solução e uma das strings da entrada é
 encontrada (linha 3), uma posição (posicao) entre [1, $m$] é selecionada aleatoriamente
 (linha 8), uma posição ($id_{-}cadeia$) entre [1, $n$] é selecionada aleatoriamente, a string
-vizinho é gerada ao se substituir candidatoposicao por $S_{id_{-}cadeia}$,posicao (linha 11), um
+vizinho é gerada ao se substituir candidatoposicao por $S_{id_{-}cadeia,posicao}$ (linha 11), um
 número real entre [0, 1] é gerado (linha 14).
 
 ### Solução inicial
@@ -119,9 +114,9 @@ com os dados da entrada, a coluna $sa_1$ que contém o valor encontrado pelo SA 
 o algoritmo de solução inicial 1, a coluna $sa_2$ que contém o valor encontrado pelo SA
 usando o algoritmo de solução inicial 2, a coluna $sa_3$ que contém o valor encontrado
 pelo SA usando o algoritmo de solução inicial 3, a coluna $sa_4$ que contém o valor
-encontrado pelo SA usando o algoritmo de solução inicial 4, a coluna lb com o lower
-bound da solução ótima, a coluna ub com o upper bound da solução ótima, a coluna
-ER com o erro relativo entre o lower bound e a melhor resposta entre as versões do
+encontrado pelo SA usando o algoritmo de solução inicial 4, a coluna $lb$ com o lower
+bound da solução ótima, a coluna $ub$ com o upper bound da solução ótima, a coluna
+$ER$ com o erro relativo entre o lower bound e a melhor resposta entre as versões do
 SA e a coluna σ com o desvio padrão entre as respostas das versões do SA.
 
 
@@ -143,9 +138,9 @@ com os dados da entrada, a coluna $sa_1$ que contém o valor encontrado pelo SA 
 o algoritmo de solução inicial 1, a coluna $sa_2$ que contém o valor encontrado pelo SA
 usando o algoritmo de solução inicial 2, a coluna $sa_3$ que contém o valor encontrado
 pelo SA usando o algoritmo de solução inicial 3, a coluna $sa_4$ que contém o valor
-encontrado pelo SA usando o algoritmo de solução inicial 4, a coluna lb com o lower
-bound da solução ótima, a coluna ub com o upper bound da solução ótima, a coluna
-ER com o erro relativo entre o lower bound e a melhor resposta entre as versões do
+encontrado pelo SA usando o algoritmo de solução inicial 4, a coluna $lb$ com o lower
+bound da solução ótima, a coluna $ub$ com o upper bound da solução ótima, a coluna
+$ER$ com o erro relativo entre o lower bound e a melhor resposta entre as versões do
 SA e a coluna σ com o desvio padrão entre as respostas das versões do SA. Além
 disso, o símbolo * indica quais das instâncias em que se foi possível alcançar a solução
 ótima.
@@ -170,9 +165,9 @@ com os dados da entrada, a coluna $sa_1$ que contém o valor encontrado pelo SA 
 o algoritmo de solução inicial 1, a coluna $sa_2$ que contém o valor encontrado pelo SA
 usando o algoritmo de solução inicial 2, a coluna $sa_3$ que contém o valor encontrado
 pelo SA usando o algoritmo de solução inicial 3, a coluna $sa_4$ que contém o valor
-encontrado pelo SA usando o algoritmo de solução inicial 4, a coluna lb com o lower
-bound da solução ótima, a coluna ub com o upper bound da solução ótima, a coluna
-ER com o erro relativo entre o lower bound e a melhor resposta entre as versões do
+encontrado pelo SA usando o algoritmo de solução inicial 4, a coluna $lb$ com o lower
+bound da solução ótima, a coluna $ub$ com o upper bound da solução ótima, a coluna
+$ER$ com o erro relativo entre o lower bound e a melhor resposta entre as versões do
 SA e a coluna σ com o desvio padrão entre as respostas das versões do SA. Além
 disso, o símbolo * indica quais das instâncias em que se foi possível alcançar a solução
 ótima.
@@ -218,8 +213,8 @@ usando o algoritmo de solução inicial 1, a coluna $sap_2$ que contém o valor 
 pelo SAP usando o algoritmo de solução inicial 2, a coluna sap3 que contém o valor
 encontrado pelo SAP usando o algoritmo de solução inicial 3, a coluna $sap_4$ que
 contém o valor encontrado pelo SAP usando o algoritmo de solução inicial 4, a coluna
-lb com o lower bound da solução ótima, a coluna ub com o upper bound da solução
-ótima, a coluna ER com o erro relativo entre o lower bound e a melhor resposta
+$lb$ com o lower bound da solução ótima, a coluna $ub$ com o upper bound da solução
+ótima, a coluna $ER$ com o erro relativo entre o lower bound e a melhor resposta
 entre as versões do SAP e a coluna σ com o desvio padrão entre as respostas das
 versões do SAP.
 
@@ -244,8 +239,8 @@ usando o algoritmo de solução inicial 1, a coluna $sap_2$ que contém o valor 
 pelo SAP usando o algoritmo de solução inicial 2, a coluna $sap_3$ que contém o valor
 encontrado pelo SAP usando o algoritmo de solução inicial 3, a coluna $sap_4$ que
 contém o valor encontrado pelo SAP usando o algoritmo de solução inicial 4, a coluna
-lb com o lower bound da solução ótima, a coluna ub com o upper bound da solução
-ótima, a coluna ER com o erro relativo entre o lower bound e a melhor resposta
+$lb$ com o lower bound da solução ótima, a coluna $ub$ com o upper bound da solução
+ótima, a coluna $ER$ com o erro relativo entre o lower bound e a melhor resposta
 entre as versões do SAP e a coluna σ com o desvio padrão entre as respostas das
 versões do SAP. Além disso, o símbolo * indica quais das instâncias em que se foi
 possível alcançar a solução ótima.
@@ -271,8 +266,8 @@ usando o algoritmo de solução inicial 1, a coluna $sap_2$ que contém o valor 
 pelo SAP usando o algoritmo de solução inicial 2, a coluna $sap_3$ que contém o valor
 encontrado pelo SAP usando o algoritmo de solução inicial 3, a coluna $sap_4$ que
 contém o valor encontrado pelo SAP usando o algoritmo de solução inicial 4, a coluna
-lb com o lower bound da solução ótima, a coluna ub com o upper bound da solução
-ótima, a coluna ER com o erro relativo entre o lower bound e a melhor resposta
+$lb$ com o lower bound da solução ótima, a coluna $ub$ com o upper bound da solução
+ótima, a coluna $ER$ com o erro relativo entre o lower bound e a melhor resposta
 entre as versões do SAP e a coluna σ com o desvio padrão entre as respostas das
 versões do SAP. Além disso, o símbolo * indica quais das instâncias em que se foi
 possível alcançar a solução ótima.
@@ -339,6 +334,93 @@ algoritmo proposto por (SOUZA, 2006) o 9 para realizar essa tarefa.
 * SSSE4.2
 * POSIX
 
+### Experimentos
+
+Os testes foram realizados em um computador rodando o Ubuntu 18.04.3 LTS, com um processador Intel Core i7-3770 com CPU 3.40GHz e memória de 8Gb, a linguagem de programação utilizada foi a C++ versão 17, o compilador foi o g++ 7.4.0 e as flags de compilação usadas foram: -O3, -funroll-loops, -march=native, -mtune=native, -lpthread.
+
+Cada instância foi executada três vezes para se obter a média aritmética dos resultados e dos tempos.
+
+#### Mcclure
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-ils-mcclure.png)
+
+A tabela 4.16 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $ils_1$ que contém o valor encontrado pelo ILS
+usando o algoritmo de solução inicial 1, a coluna $ils_2$ que contém o valor encontrado
+pelo ILS usando o algoritmo de solução inicial 2, a coluna $ils_3$ que contém o valor
+encontrado pelo ILS usando o algoritmo de solução inicial 3, a coluna $ils_4$ que contém
+o valor encontrado pelo ILS usando o algoritmo de solução inicial 4, a coluna $lb$
+com o lower bound da solução ótima, a coluna $ub$ com o upper bound da solução
+ótima, a coluna $ER$ com o erro relativo entre o lower bound e a melhor resposta
+entre as versões do ILS e a coluna σ com o desvio padrão entre as respostas das
+versões do ILS. Além disso, o símbolo * indica quais das instâncias em que se foi
+possível alcançar a solução ótima.
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-ils-time-mcclure.png)
+
+A tabela 4.17 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $ils_1$ que contém o tempo em segundos da execução
+do ILS usando o algoritmo de solução inicial 1 sobre a instância, a coluna $ils_2$ que
+contém o tempo em segundos da execução do ILS usando o algoritmo de solução
+inicial 2 sobre a instância, a coluna $ils_3$ que contém o tempo em segundos da execução
+do ILS usando o algoritmo de solução inicial 3 sobre a instância e a coluna $ils_4$ que
+contém o tempo em segundos da execução do ILS usando o algoritmo de solução
+inicial 4 sobre a instância.
+
+#### Hufsky
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-ils-hufsky.png)
+
+A tabela 4.18 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $ils_1$ que contém o valor encontrado pelo ILS
+usando o algoritmo de solução inicial 1, a coluna $ils_2$ que contém o valor encontrado
+pelo ILS usando o algoritmo de solução inicial 2, a coluna $ils_3$ que contém o valor
+encontrado pelo ILS usando o algoritmo de solução inicial 3, a coluna $ils_4$ que contém
+o valor encontrado pelo ILS usando o algoritmo de solução inicial 4, a coluna $lb$
+com o lower bound da solução ótima, a coluna $ub$ com o upper bound da solução
+ótima, a coluna $ER$ com o erro relativo entre o lower bound e a melhor resposta
+entre as versões do ILS e a coluna σ com o desvio padrão entre as respostas das
+versões do ILS. Além disso, o símbolo * indica quais das instâncias em que se foi
+possível alcançar a solução ótima.
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-ils-time-hufsky.png)
+
+A tabela 4.19 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $ils_1$ que contém o tempo em segundos da execução
+do ILS usando o algoritmo de solução inicial 1 sobre a instância, a coluna $ils_2$ que
+contém o tempo em segundos da execução do ILS usando o algoritmo de solução
+inicial 2 sobre a instância, a coluna $ils_3$ que contém o tempo em segundos da execução
+do ILS usando o algoritmo de solução inicial 3 sobre a instância e a coluna $ils_4$ que
+contém o tempo em segundos da execução do ILS usando o algoritmo de solução
+inicial 4 sobre a instância.
+
+#### Chimani
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-ils-chimani.png)
+
+A tabela 4.20 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $ils_1$ que contém o valor encontrado pelo ILS
+usando o algoritmo de solução inicial 1, a coluna $ils_2$ que contém o valor encontrado
+pelo ILS usando o algoritmo de solução inicial 2, a coluna $ils_3$ que contém o valor
+encontrado pelo ILS usando o algoritmo de solução inicial 3, a coluna $ils_4$ que contém
+o valor encontrado pelo ILS usando o algoritmo de solução inicial 4, a coluna $lb$
+com o lower bound da solução ótima, a coluna $ub$ com o upper bound da solução
+ótima, a coluna $ER$ com o erro relativo entre o lower bound e a melhor resposta
+entre as versões do ILS e a coluna σ com o desvio padrão entre as respostas das
+versões do ILS. Além disso, o símbolo * indica quais das instâncias em que se foi
+possível alcançar a solução ótima.
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-ils-time-chimani.png)
+
+A tabela 4.21 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna $ils_1$ que contém o tempo em segundos da execução
+do ILS usando o algoritmo de solução inicial 1 sobre a instância, a coluna $ils_2$ que
+contém o tempo em segundos da execução do ILS usando o algoritmo de solução
+inicial 2 sobre a instância, a coluna $ils_3$ que contém o tempo em segundos da execução
+do ILS usando o algoritmo de solução inicial 3 sobre a instância e a coluna $ils_4$ que
+contém o tempo em segundos da execução do ILS usando o algoritmo de solução inicial 4 sobre a instância.
+
+
 ## GA (/ga)
 A abordagem utilizada é inspirada no Algoritmo Genético (GA) de (FESTA;
 PARDALOS, 2012) que consiste em trabalhar com uma população dividida em três
@@ -389,3 +471,81 @@ cada posição da string de acordo com uma probabilidade $\lambda$ = $\frac{\sqr
 ![Pseudocódigo](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/muta%C3%A7%C3%A3o.png)
 
 O valor real aleatório entre [0, 1] é selecionado (linha 2), $S_i$ recebe um caractere aleatório de $\Sigma^{'}$ que é a coleção de todos os caracteres da coluna $j$ (linha 3).
+
+### Experimentos
+
+Os testes foram realizados em um computador rodando o Ubuntu 18.04.3 LTS, com um processador Intel Core i7-3770 com CPU 3.40GHz e memória de 8Gb, a linguagem de programação utilizada foi a C++ versão 17, o compilador foi o g++ 7.4.0 e as flags de compilação usadas foram: -O3, -funroll-loops, -march=native, -mtune=native, -lpthread.
+
+Cada instância foi executada três vezes para se obter a média aritmética dos resultados e dos tempos.
+
+#### Mcclure
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-ga-mcclure.png)
+
+A tabela 4.22 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna ga com a resposta encontrada pelo GA, a coluna
+t com o tempo em segundos da execução do algoritmo sobre a instância, coluna $lb$
+com o lower bound da solução ótima, a coluna $ub$ com o upper bound da solução
+ótima e a coluna $ER$ com o erro relativo entre o lower bound e a resposta do GA.
+
+
+#### Hufsky
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-ga-hufsky.png)
+
+A tabela 4.23 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna ga com a resposta encontrada pelo GA, a coluna
+t com o tempo em segundos da execução do algoritmo sobre a instância, coluna $lb$
+com o lower bound da solução ótima, a coluna $ub$ com o upper bound da solução
+ótima e a coluna $ER$ com o erro relativo entre o lower bound e a resposta do GA.
+
+#### Chimani
+
+![Tabela](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/t-ga-chimani.png)
+
+A tabela 4.24 apresenta uma coluna instância que possui os nomes dos arquivos
+com os dados da entrada, a coluna ga com a resposta encontrada pelo GA, a coluna
+t com o tempo em segundos da execução do algoritmo sobre a instância, coluna $lb$
+com o lower bound da solução ótima, a coluna $ub$ com o upper bound da solução
+ótima e a coluna $ER$ com o erro relativo entre o lower bound e a resposta do GA.
+
+[^1] BOUCHER, C. Closest string with outliers. BMC Bioinformatics, v. 12, p.
+1471–2105, 02 2011.
+
+[^2] CHIMANI WOSTE, B. A closer look at the closest string and closest substring
+problem. ALENEX 11: Proceedings of the Meeting on Algorithm Engineering &
+Expermiments, Society for Industrial and Applied Mathematics, p. 13–24, 2011.
+
+[^3] COLEY, D. A. An Introduction to Genetic Algorithms for Scientists and Engineers.
+ 1. ed. [S.l.]: World Scientific Publishing Co. Pte. Ltd, 1999.
+
+[^4] FESTA, P.; PARDALOS, P. Efficient solutions for the far from most string problem.
+Ann Oper Res, v. 196, p. 663–682, 2012.
+
+[^5] FRANCES, M.; LITMAN, A. On covering problems of codes. Theory of Computing
+Systems, v. 30(2), p. 113–119, 1997.
+
+[^6] HUFSKY, F. et al. Swiftly computing center strings. LNBI, Spring, v. 6293, p.
+325–336, 2010.
+
+[^7] KIRKPATRICK, S.; GELATT, C.; VECCHI, M. Optimization by simulated
+annealing. Science (New York, N.Y.), v. 220, p. 671–80, 06 1983.
+
+[^8] LI, M.; MA, B.; WANG, L. On The Closest String and Substring Problems. arXiv,
+2000. Disponível em: <https://arxiv.org/abs/cs/0002012>.
+
+[^9] MCCLURE MARCELLA, A.; VASI, T.; FITCH WALTER, M. Comparative
+analysis of multiple protein-sequence alignment methods. Molecular biology and
+evolution, v. 11 4, p. 571–92, 1994.
+
+[^10] METROPOLIS, N. et al. Equation of state calculations by fast computing machines.
+Journal of Chemical Physics, v. 21, p. 1087–1092, June 1953.
+
+[^11] REINSMA PUCA HUACHI VAZ PENNA, M. J. F. S. J. Um algoritmo simples e
+eficiente para resolução do problema do caixeiro viajante generalizado. L SIMPóSIO
+BRASILEIRO DE PESQUISA OPERACIONAL, 2018.
+
+[^12] SANTOS, A. F. M. Algoritmos heurísticos para a solução do Problema da Cadeia de
+Caracteres Mais Próxima. Dissertação (Mestrado) — CEFET-MG, 2018.
+
+[^13] SOUZA, M. J. F. Inteligência Computacional para Otimização. [S.l.], 2006.
+Disponível em: <http://www.decom.ufop.br/prof/marcone/Disciplinas/
+InteligenciaComputacional/SA.PPT>.
