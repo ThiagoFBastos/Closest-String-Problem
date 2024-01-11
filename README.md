@@ -1,6 +1,6 @@
 # Closest String Problem
 
-Seja $S$ uma sequência de cadeias {$S_1$, $S_2$, $S_3$, ... , $S_n$} com $|S_i|$ = $m$ que possuem caracteres de um alfabeto $\Sigma$. O problema da string mais próxima consiste em encontrar uma cadeia T também de comprimento m, em que a maior distância de Hamming entre $T$ e todas as cadeias da entrada $S$ é mínima, ou seja, $T$ = $argmin_T$ ${max_{1 \le i \le n}{d(S_i, T)}}$
+Seja $S$ uma sequência de cadeias { $S_1$, $S_2$, $S_3$, ... , $S_n$ } com $|S_i|$ = $m$ que possuem caracteres de um alfabeto $\Sigma$. O problema da string mais próxima consiste em encontrar uma cadeia T também de comprimento m, em que a maior distância de Hamming entre $T$ e todas as cadeias da entrada $S$ é mínima, ou seja, $T$ = $argmin_T$ ${max_{1 \le i \le n}{d(S_i, T)}}$
 
 ## Instâncias
 
