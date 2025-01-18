@@ -31,8 +31,8 @@ Instâncias Chimani com o limite inferior da (lb) e o limite superior (ub) da re
 * programa make
 
 ## Uso
-1. Execute o comando make na pasta com arquivo makefile
-2. Execute ./[programa] [arquivo com as instâncias]
+1. Execute o comando make na pasta com arquivo makefile com: make
+2. Execute: ./[programa] [arquivo com as instâncias]
 3. Exemplo: ./sa ../../instancias/mcclure_tar/McClure-582-20-10-141.csp
 
 ## Solução inicial 1
