@@ -2,6 +2,8 @@
 
 Seja $S$ uma sequência de cadeias { $S_1$, $S_2$, $S_3$, ... , $S_n$ } com $|S_i|$ = $m$ que possuem caracteres de um alfabeto $\Sigma$. O problema da string mais próxima consiste em encontrar uma cadeia T também de comprimento m, em que a maior distância de Hamming entre $T$ e todas as cadeias da entrada $S$ é mínima, ou seja, $T$ = $argmin_T$ ${max_{1 \le i \le n}{d(S_i, T)}}$
 
+Este é o trabalho de conclusão de curso da minha graduação em Ciência da Computação e o [TCC](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/Dados/T_tulo_do_Trabalho.pdf) contém mais informações detalhadas sobre a pesquisa e os resultados.
+
 ## Instâncias
 
 [informações sobre as instâncias](https://github.com/ThiagoFBastos/Closest-String-Problem/blob/master/instancias/research_csp_cssp%20%5BTheoretical%20Computer%20Science%20_%20Theoretische%20Informatik%5D.pdf)
