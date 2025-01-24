@@ -352,8 +352,7 @@ com os dados da entrada, a coluna $ils_1$ que contém o valor encontrado pelo IL
 usando o algoritmo de solução inicial 1, a coluna $ils_2$ que contém o valor encontrado
 pelo ILS usando o algoritmo de solução inicial 2, a coluna $ils_3$ que contém o valor
 encontrado pelo ILS usando o algoritmo de solução inicial 3, a coluna $ils_4$ que contém
-o valor encontrado pelo ILS usando o algoritmo de solução inicia![g](https://github.com/user-attachments/assets/bfa6dd3d-1f94-44e7-a3c1-911183625e54)
-l 4, a coluna $lb$
+o valor encontrado pelo ILS usando o algoritmo de solução inicial 4, a coluna $lb$
 com o lower bound da solução ótima, a coluna $ub$ com o upper bound da solução
 ótima, a coluna $ER$ com o erro relativo entre o lower bound e a melhor resposta
 entre as versões do ILS e a coluna σ com o desvio padrão entre as respostas das
